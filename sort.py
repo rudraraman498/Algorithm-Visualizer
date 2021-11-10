@@ -3,8 +3,6 @@ from tkinter import ttk
 import random
 from bubblesort import bubble_sort
 from tkinter import messagebox
-# from time import perf_counter
-# from bubblesort import bubble
 
 
 
@@ -18,13 +16,6 @@ def StartAlgorithm():
     global data
     chosen_data = "Bubble Sort"
     bubble_sort(data, drawData, speedscale.get())
-    # chosen_data= algo_menu.get()
-    # # timevalue.delete(0,END)
-    
-    # if(chosen_data=="Bubble Sort"):
-        # bubble_sort(data, drawData, speedscale.get())
-        # timevalue.insert(0,bubble(data))
-
     drawData(data, ['green' for x in range(len(data))])
     messagebox.showinfo("Completed","Sorting Complete")
         
@@ -51,7 +42,6 @@ def drawData(data,colorArray):
 
 
 def Generate():
-	#print("Selected Algorithm:"+ selected_algorithm.get())
 	global data
 	minivalue=int(minvalue.get())
 	maxivalue=int(maxvalue.get())
@@ -66,9 +56,6 @@ def Generate():
 
 selected_algorithm=StringVar()
 
-
-# algo_menu.current(0)
-
 random_generate = Button(root,text="Generate",bg="green",relief=SUNKEN,bd=5,width=10,command=Generate)
 random_generate.place(x=750,y=60)
 
@@ -79,15 +66,7 @@ sizevaluelabel.place(x=20,y=60)
 
 sizevalue=Scale(root,from_=3,to=30,resolution=1,orient=HORIZONTAL,relief=GROOVE,bd=2,width=10)
 sizevalue.place(x=120,y=60)
-# #..
-# timevaluelabel=Label(text="Time:", bg='DarkSeaGreen4',width=10,relief=GROOVE,bd=5)
-# #sizevaluelabel.place(x=0,y=60)
-# timevaluelabel.place(x=20,y=105)
 
-
-# timevalue=Entry(root,width=40)#from_=3,to=30,resolution=1,orient=HORIZONTAL,relief=GROOVE,bd=2,width=10)
-# timevalue.place(x=120,y=105)
-# #..
 minvaluelabel=Label(text="Min value:", bg='DarkSeaGreen4', width=10,relief=GROOVE,bd=5,pady=6)
 #minvaluelabel.place(x=250,y=60)
 minvaluelabel.place(x=280,y=60)
@@ -118,16 +97,4 @@ speedscale.place(x=120,y=10)
 
 canvas = Canvas(root,width=870, height = 450,bg="black")
 canvas.place(x=10,y=130)
-
-
-
-
-
-
-
-
-
-
-
-
 root.mainloop()
