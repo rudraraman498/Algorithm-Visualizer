@@ -4,9 +4,6 @@ import random
 from bubblesort import bubble_sort
 from tkinter import messagebox
 
-
-
-
 root=Tk()
 root.title("Sorting Algorithm Visualizer")
 root.geometry("900x600+200+80")
@@ -14,7 +11,6 @@ root.config(bg="lightblue")
 data=[]
 def StartAlgorithm():
     global data
-    chosen_data = "Bubble Sort"
     bubble_sort(data, drawData, speedscale.get())
     drawData(data, ['green' for x in range(len(data))])
     messagebox.showinfo("Completed","Sorting Complete")
@@ -38,9 +34,6 @@ def drawData(data,colorArray):
 		canvas.create_text(x0,y0,anchor=SW,text=str(data[i]),fill="orange")
 	root.update_idletasks()
 
-
-
-
 def Generate():
 	global data
 	minivalue=int(minvalue.get())
@@ -50,8 +43,6 @@ def Generate():
 	data=[]
 	for _ in range(sizeevalue):
 		data.append(random.randrange(minivalue,maxivalue+1))
-	
-	
 	drawData(data,['red' for x in range(len(data))])
 
 selected_algorithm=StringVar()
